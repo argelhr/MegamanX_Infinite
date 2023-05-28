@@ -71,7 +71,7 @@ export default class Image extends Circle {
     respawn(limits) {
         let aux = Math.random()
         if (aux > 0.75) {
-            this.y = limits.height + this.height
+            this.y = limits.height + this.height+5
             this.x = limits.width * Math.random()
         } else if (aux > 0.5) {
             this.y = 252 - this.height + 5
@@ -82,7 +82,7 @@ export default class Image extends Circle {
             this.x = Math.random() * 137 + 563
         }
         else {
-            this.y = 176 - this.height
+            this.y = 176 - this.height +5
             this.x = 238 + 320 * Math.random()
         }
     }
