@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
 }
 
 .container {
@@ -131,4 +132,13 @@ body {
     border-radius: 5px;
     border-style:groove;
     
+}
+
+#to_capcom{
+    position: absolute;
+    color: white;
+    display: none;
+    width: 300px;
+    background-color: brown;
+    bottom: 0;
 }

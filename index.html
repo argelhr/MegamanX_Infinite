@@ -32,13 +32,10 @@
 
 
         </div>
-        <audio id="musica" paused>
-            <source src="./audio/xbuster_shot.mp3" type="audio/mp3" />
-        </audio>
-        
-        <audio id="home" autoplay>
-            <source src="./audio/home.mp3" type="audio/mp3" />
-        </audio>
+
+        <div id="to_capcom">This game project is based on the game MegamanX, owned by Capcom. It was developed solely
+            for educational purposes and evaluation in college, with no profit motive. We acknowledge Capcom's rights to
+            the game and have no intention of infringing upon its intellectual property.</div>
 
         <div class="canvas">
             <canvas id="canvas" width="700" height="400" tabindex="1">
@@ -47,15 +44,23 @@
                 aut
                 animi eaque. Omnis?
             </canvas>
+            <audio id="musica" paused>
+                <source src="./audio/xbuster_shot.mp3" type="audio/mp3" />
+            </audio>
+
+            <audio id="home" autoplay>
+                <source src="./audio/home.mp3" type="audio/mp3" />
+            </audio>
         </div>
 
     </body>
 
     <script type="module" src="./src/main.js">
-    window.onload() = () =>{
-        document.getElementById('home').currenttime = 0
-        document.getElementById("home").play()
-    }
+        window.onload() = () => {
+            document.querySelector('#canvas').style.display = "none"
+            document.getElementById('home').currenttime = 0
+            document.getElementById("home").play()
+        }
     </script>
 
 </body>

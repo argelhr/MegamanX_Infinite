@@ -83,8 +83,12 @@ const init = async () => {
         container.style.display = "none"
     }, 500)
     canvas.style.display = 'block'
+    document.querySelector("#to_capcom").style.display = 'block'
 
+    ctx.fillStyle = 'black'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
     console.log("Iniciando game...")
+    
 
     bgImage = await loadImage('img/background3.png') //background da catarata
     // pattern = ctx.createPattern(bgImage, 'repeat') //obsoleto
@@ -146,8 +150,21 @@ const pre_loop = () => {
         ready.draaw(ctx)//o ready inicial
 
 
+        //texto para ensinar os comandos
+        let textSize = 24;
+        ctx.font = `bold ${textSize}px sans`;
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#fff";
+        texto = `Press "A" or "D" to move, "Enter" to shoot, "Space" to jump.`
+        ctx.fillText(
+            texto,
+            30,
+            textSize / 3
+        )
+
+
         // contagem para começar o jogo
-        if (aux === 110) {
+        if (aux === 180) {
             cancelAnimationFrame(pre_loop)
             requestAnimationFrame(loop)
         }
@@ -338,6 +355,14 @@ const morte = () => {
             canvas.width - 130,
             textSize / 3
         )
+
+        texto = `Press "F5" to restart`
+        ctx.fillText(
+            texto,
+            canvas.width /3,
+            textSize / 3
+        )
+
 
         requestAnimationFrame(morte)
 
