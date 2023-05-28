@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegamanX Infinite</title>
+    <link rel="stylesheet" href="./src/style.css">
+
+</head>
+
+<body>
+
+    <body>
+
+        <div class="container" id="container">
+
+            <div>
+
+                <div id="jogo">
+                    <img id="logo" src="./img/logo.png" alt="">
+                    <!-- tela preta antes do jogo -->
+
+                    <div id="movendo-tiro">
+                        <div id="blaster" class="blaster"></div>
+                    </div>
+                    <input type="button" id="start" class="start" value='Game Start'>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <audio id="musica" paused>
+            <source src="./audio/xbuster_shot.mp3" type="audio/mp3" />
+        </audio>
+        
+        <audio id="home" autoplay>
+            <source src="./audio/home.mp3" type="audio/mp3" />
+        </audio>
+
+        <div class="canvas">
+            <canvas id="canvas" width="700" height="400" tabindex="1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum consectetur numquam sequi eum facere
+                fugit dicta
+                aut
+                animi eaque. Omnis?
+            </canvas>
+        </div>
+
+    </body>
+
+    <script type="module" src="./src/main.js">
+    window.onload() = () =>{
+        document.getElementById('home').currenttime = 0
+        document.getElementById("home").play()
+    }
+    </script>
+
+</body>
+
+</html>

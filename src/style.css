@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("../img/zx.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#jogo {
+    width: 700px;
+    height: 400px;
+    background-color: black;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+}
+
+
+@font-face {
+    font-family: "MMRock9";
+    src: url(../font/MMRock9.ttf);
+}
+
+
+.start {
+    font-family: "MMRock9";
+    background-color: black;
+
+    position: absolute;
+    bottom: 170px;
+    left: 45%;
+    font-size: 16px;
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, rgb(209, 115, 0), rgb(249, 194, 92), rgb(162, 89, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#movendo-tiro {
+    position: absolute;
+    bottom: 170px;
+    left: 520px;
+
+}
+
+#blaster {
+    transform: translateX(0);
+    opacity: 0;
+    background-image: url('./Daco_4461229.png');
+    width: 50px;
+    height: 30px;
+
+    background-position: -255px -360px;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+
+.animacao-tiro {
+    animation: tiro .25s steps(1) 2;
+}
+
+.movimento-tiro {
+
+    animation: move-tiro .5s linear 1;
+}
+
+@keyframes tiro {
+    0% {
+        background-position: -155px -360px;
+    }
+
+    25% {
+        background-position: -210px -360px;
+    }
+
+    50% {
+        background-position: -255px -360px;
+    }
+
+    75% {
+        background-position: -210px -360px;
+    }
+
+    100% {
+        background-position: -155px -360px;
+    }
+
+}
+
+@keyframes move-tiro {
+    from {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(260px);
+    }
+
+}
+#logo{
+    position: relative;
+    left: 150px;
+    width: 400px;
+    height: 200px;
+}
+.canvas {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#canvas {
+    position: relative;
+    display: none;
+    border: 3px darkblue;
+    border-radius: 5px;
+    border-style:groove;
+    
+}
