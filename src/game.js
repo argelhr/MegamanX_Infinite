@@ -259,9 +259,11 @@ const loop = () => {
         ctx.textBaseline = "top";
         ctx.fillStyle = "#fff";
         texto = `Pontos: ${megaman.pontos}`
+        let tam = ctx.measureText(texto)
+        console.log()
         ctx.fillText(
             texto,
-            canvas.width - 130,
+            canvas.width - tam.width -10,
             textSize / 3
         )
 
