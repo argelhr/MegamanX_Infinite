@@ -138,6 +138,8 @@ let aux = 0
 const pre_loop = () => {
     setTimeout(() => {
 
+
+
         aux++
 
         //se o video tiver carregado ele desenha o video
@@ -152,21 +154,24 @@ const pre_loop = () => {
 
 
         //texto para ensinar os comandos
-        
-        ctx.fillStyle = 'black'
-        ctx.fillRect(15, 5, 250, 100)
 
         let textSize = 22;
         ctx.font = `bold ${textSize}px sans-serif`;
         ctx.textBaseline = "top";
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "darkblue";
         texto = `"A" or "D" to move,`
+
+        ctx.shadowColor = "#333";
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
+        ctx.shadowBlur = 2;
+
 
         ctx.fillText(
             texto,
             30,
             10
-        )        
+        )
         texto = `"Enter" to shoot,`
         ctx.fillText(
             texto,
@@ -196,6 +201,7 @@ const pre_loop = () => {
 
 const loop = () => {
     setTimeout(() => {
+
 
 
         // desenhando o background em video
