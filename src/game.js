@@ -88,7 +88,7 @@ const init = async () => {
     ctx.fillStyle = 'black'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     console.log("Iniciando game...")
-    
+
 
     bgImage = await loadImage('img/background3.png') //background da catarata
     // pattern = ctx.createPattern(bgImage, 'repeat') //obsoleto
@@ -151,8 +151,8 @@ const pre_loop = () => {
 
 
         //texto para ensinar os comandos
-        let textSize = 24;
-        ctx.font = `bold ${textSize}px sans`;
+        let textSize = 22;
+        ctx.font = `bold ${textSize}px sans-serif`;
         ctx.textBaseline = "top";
         ctx.fillStyle = "#fff";
         texto = `Press "A" or "D" to move, "Enter" to shoot, "Space" to jump.`
@@ -255,15 +255,14 @@ const loop = () => {
 
         //para escrever a pontuação do jogo
         let textSize = 24;
-        ctx.font = `bold ${textSize}px sans`;
+        ctx.font = `bold ${textSize}px sans-serif`;
         ctx.textBaseline = "top";
         ctx.fillStyle = "#fff";
         texto = `Pontos: ${megaman.pontos}`
         let tam = ctx.measureText(texto)
-        console.log()
         ctx.fillText(
             texto,
-            canvas.width - tam.width -10,
+            canvas.width - tam.width - 10,
             textSize / 3
         )
 
@@ -320,7 +319,7 @@ const loop = () => {
 }
 
 const morte = () => {
-    
+
     setTimeout(() => {
 
         if (video)
@@ -348,20 +347,21 @@ const morte = () => {
 
         //pontuação continua
         let textSize = 24;
-        ctx.font = `bold ${textSize}px sans`;
+        ctx.font = `bold ${textSize}px sans-serif`;
         ctx.textBaseline = "top";
         ctx.fillStyle = "#fff";
         texto = `Pontos: ${megaman.pontos}`
+        let tam = ctx.measureText(texto)
         ctx.fillText(
             texto,
-            canvas.width - 130,
+            canvas.width - tam.width - 10,
             textSize / 3
         )
 
         texto = `Press "F5" to restart`
         ctx.fillText(
             texto,
-            canvas.width /3,
+            canvas.width / 3,
             textSize / 3
         )
 
