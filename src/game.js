@@ -150,16 +150,34 @@ const pre_loop = () => {
         ready.draaw(ctx)//o ready inicial
 
 
+
         //texto para ensinar os comandos
+        
+        ctx.fillStyle = 'black'
+        ctx.fillRect(15, 5, 250, 100)
+
         let textSize = 22;
         ctx.font = `bold ${textSize}px sans-serif`;
         ctx.textBaseline = "top";
-        ctx.fillStyle = "#fff";
-        texto = `Press "A" or "D" to move, "Enter" to shoot, "Space" to jump.`
+        ctx.fillStyle = "white";
+        texto = `"A" or "D" to move,`
+
         ctx.fillText(
             texto,
             30,
-            textSize / 3
+            10
+        )        
+        texto = `"Enter" to shoot,`
+        ctx.fillText(
+            texto,
+            30,
+            40
+        )
+        texto = `"Space" to jump.`
+        ctx.fillText(
+            texto,
+            30,
+            70
         )
 
 
