@@ -242,7 +242,7 @@ const loop = () => {
                     som_dano_inimigo.currentTime = 0
                     som_dano_inimigo.play()
 
-                    t.y += 700
+                    t.x += 900
 
                     megaman.pontos++//pontuação soma 1
 
@@ -267,9 +267,11 @@ const loop = () => {
             tiros.forEach(t => {
                 // verifica colisão com os tiros
                 if (e.hit.colide(t)) {
-                    t.y += 700
+                    t.x += 900
+
                     som_dano_inimigo.currentTime = 0
                     som_dano_inimigo.play()
+
                     e.respawn(boundaries)
                     megaman.pontos++
                 }
@@ -291,16 +293,18 @@ const loop = () => {
         )
 
         //quando clica pra atirar, cria apenas um tiro
-        if (megaman.atirando) {
-            tiro = new Projetil(megaman.x, megaman.y - 80, 15, 13, 'red', projetil)
-            if (!megaman.libera_tiro) {
-                som_buster.currentTime = 0
-                som_buster.play()
-                megaman.buster(tiros, tiro)
+
+        if (tiros.length < 4)
+            if (megaman.atirando) {
+                tiro = new Projetil(megaman.x, megaman.y - 80, 15, 13, 'red', projetil)
+                if (!megaman.libera_tiro) {
+                    som_buster.currentTime = 0
+                    som_buster.play()
+                    megaman.buster(tiros, tiro)
+                }
             }
-        }
-        else
-            megaman.libera_tiro = false
+            else
+                megaman.libera_tiro = false
 
 
         //calculo de movimento e sprites do heroi
@@ -308,11 +312,16 @@ const loop = () => {
         megaman.draw(ctx)
 
         //movimenta os tiros pelo canvas
-        tiros.forEach(t => {
-            t.move()
-            t.drawb(ctx)
-
-        })
+        
+        for (let indice = tiros.length - 1; indice >= 0; indice--) {
+            const t = tiros[indice];
+            t.move();
+            t.drawb(ctx);
+            if (t.x > 720 || t.x < - 30) {
+                console.log("tiro removido por passar do canvas ou ter impacto com inimigo")
+                tiros.splice(indice, 1);
+            }
+        }
 
         //desenha o item coletavel
         heart.draaw(ctx)// heart.hit.draw(ctx)

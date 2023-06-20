@@ -1,5 +1,4 @@
 import Circle from "./Circle";
-import { loadImage } from "../loadAssets";
 
 export default class Projetil extends Circle {
     constructor(x, y, size, speed, color, img) {

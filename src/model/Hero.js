@@ -2,7 +2,6 @@
 import Circle from "./Circle";
 import { loadImage } from "../loadAssets";
 import { getKeys, hasKey } from "../keyboard";
-import Projetil from "./Projetil";
 
 export default class Hero extends Circle {
 
